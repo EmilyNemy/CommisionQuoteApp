@@ -12,11 +12,7 @@ import java.util.UUID;
 public class CommissionCalculatorService {
 
     public QuoteResponse calculate(QuoteRequest request) {
-        BigDecimal baseRate = switch (request.riskBand()) {
-            case LOW -> new BigDecimal("0.015");    // 1.5%
-            case MEDIUM -> new BigDecimal("0.025"); // 2.5%
-            case HIGH -> new BigDecimal("0.040");   // 4.0%
-        };
+        BigDecimal baseRate = request.riskBand().getBaseRate();
 
         // Add 0.1% for every full 12-month period
         int years = request.loanTermInMonths() / 12;

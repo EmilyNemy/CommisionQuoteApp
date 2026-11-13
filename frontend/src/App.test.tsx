@@ -40,7 +40,7 @@ describe('Commission Quote Generator App', () => {
             riskBand: 'MEDIUM',
         });
 
-        expect(await screen.findByText('quote-98765')).toBeInTheDocument();
+        expect(await screen.findByText('q-98765')).toBeInTheDocument();
         expect(screen.getByText('2.80%')).toBeInTheDocument();
         expect(screen.getByText('$1,400.00')).toBeInTheDocument();
     });
@@ -76,7 +76,7 @@ describe('Commission Quote Generator App', () => {
         const mockFn = vi.spyOn(quoteApi, 'generateCommissionQuote')
             .mockRejectedValueOnce(new Error('Vendor service temporarily unavailable'))
             .mockResolvedValueOnce({
-                quoteId: 'quote-retry-ok',
+                quoteId: 'q-retry-ok',
                 commissionRate: 0.018,
                 totalCommission: 450.0,
             });
@@ -92,6 +92,6 @@ describe('Commission Quote Generator App', () => {
         await user.click(screen.getByRole('button', { name: /retry/i }));
 
         expect(mockFn).toHaveBeenCalledTimes(2);
-        expect(await screen.findByText('quote-retry-ok')).toBeInTheDocument();
+        expect(await screen.findByText('q-ry-ok')).toBeInTheDocument();
     });
 });

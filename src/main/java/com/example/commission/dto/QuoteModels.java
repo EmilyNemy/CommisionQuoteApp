@@ -8,7 +8,19 @@ import java.math.BigDecimal;
 public class QuoteModels {
 
     public enum RiskBand {
-        LOW, MEDIUM, HIGH
+        LOW(new BigDecimal("0.015")),    // 1.5%
+        MEDIUM(new BigDecimal("0.025")), // 2.5%
+        HIGH(new BigDecimal("0.040"));   // 4.0%
+
+        private final BigDecimal baseRate;
+
+        RiskBand(BigDecimal baseRate) {
+            this.baseRate = baseRate;
+        }
+
+        public BigDecimal getBaseRate() {
+            return baseRate;
+        }
     }
 
     public record QuoteRequest(

@@ -38,6 +38,9 @@ export default function App() {
   const formatCurrency = (amount: number) =>
       new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD' }).format(amount);
 
+  const formatQuoteId = (id: string) => `q-${id.slice(-5)}`;
+
+
   return (
       <main className="container">
         <h1>Commission Quote Generator</h1>
@@ -106,7 +109,7 @@ export default function App() {
               <dl className="quote-details">
                 <div>
                   <dt>Quote ID</dt>
-                  <dd>{quote.quoteId}</dd>
+                  <dd title={quote.quoteId}>{formatQuoteId(quote.quoteId)}</dd>
                 </div>
                 <div>
                   <dt>Commission Rate</dt>
