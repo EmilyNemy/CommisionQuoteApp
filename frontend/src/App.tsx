@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { generateCommissionQuote, QuoteResponse, RiskBand } from './api/quoteApi';
+import { generateCommissionQuote, type QuoteResponse, type RiskBand } from './api/quoteApi';
 import './App.css';
 
 export default function App() {
