@@ -74,4 +74,4 @@ npm test
 In accordance with the challenge guidelines, AI tools were used as an engineering accelerator during development while maintaining full ownership and verification of all submitted code:
 * **Architecture & Scaffolding:** Used AI to brainstorm the BFF proxy separation and scaffold initial Spring Boot DTOs, controllers, and React form boilerplate.
 * **Testing & Debugging:** Used AI to generate unit/integration test cases (JUnit 5, `MockMvc`, `MockRestServiceServer`, Vitest) and troubleshoot Spring Boot 4 test-slice imports and Vitest `jsdom` configuration.
-* **Review & Ownership:** Every generated file was manually reviewed, tested, and verified end-to-end to ensure full comprehension ahead of the collaborative live-coding session.
+* **Implementation:** Used AI to find syntax and troubleshoot some of the errors popping up because of failing to connect.
